@@ -1,8 +1,6 @@
 package Sistema;
 import java.util.ArrayList;
 
-
-
 public class Organizacoes {
 
     private String nome;
@@ -28,8 +26,9 @@ public class Organizacoes {
     }
 
     public void listarProjetos() {
+        System.out.println("Organização: " +getNome());
         for (ProjetoSustentavel projeto : listaProjetos) {
-            System.out.println(projeto.getNome() + " - " + projeto.getDescricao());
+            System.out.println("Projeto:" + projeto.getNome() + " Descrição do projeto - " + projeto.getDescricao());
                 for (Voluntario voluntario: projeto.voluntarios ){
                     System.out.println("Voluntário: " + voluntario.getNome());
                 }

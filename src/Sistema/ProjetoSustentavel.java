@@ -34,8 +34,8 @@ public class ProjetoSustentavel {
         voluntarios.add(voluntario);
     }
 
-    public void gerarRelatorioImpacto(int arvoresPlantadas, double reducaoCO2) {
-        this.relatorioImpacto = new RelatorioImpacto(arvoresPlantadas, reducaoCO2);
+    public void gerarRelatorioImpacto(int arvoresPlantadas) {
+        this.relatorioImpacto = new RelatorioImpacto(arvoresPlantadas);
     }
 
     public void exibirRelatorio() {
@@ -45,4 +45,5 @@ public class ProjetoSustentavel {
             System.out.println("Relatório ainda não gerado.");
         }
     }
+
 }
