@@ -1,12 +1,17 @@
-package Sistema;
+package Projetos;
+
+import Sistema.RelatorioImpacto;
+import Sistema.Voluntario;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ProjetoSustentavel {
+public abstract class ProjetoSustentavel {
+
     private String nome;
     private String descricao;
-    public ArrayList<Voluntario> voluntarios = new ArrayList<>();
-    private RelatorioImpacto relatorioImpacto;
+    public ArrayList<Voluntario> voluntarios;
+    protected RelatorioImpacto relatorioImpacto;
 
     public ProjetoSustentavel(String nome, String descricao) {
         this.nome = nome;
@@ -30,20 +35,31 @@ public class ProjetoSustentavel {
         this.descricao = descricao;
     }
 
+
     public void adicionarVoluntario(Voluntario voluntario) {
         voluntarios.add(voluntario);
     }
 
-    public void gerarRelatorioImpacto(int arvoresPlantadas) {
-        this.relatorioImpacto = new RelatorioImpacto(arvoresPlantadas);
+    public ArrayList<Voluntario> getVoluntarios() {
+        return voluntarios;
+    }
+
+    public void gerarRelatorioImpacto() {
+
     }
 
     public void exibirRelatorio() {
         if (relatorioImpacto != null) {
             relatorioImpacto.exibirRelatorio();
+            calcularImpacto();
         } else {
             System.out.println("Relatório ainda não gerado.");
         }
     }
 
+
+
+    public abstract void gerarRelatorioImpacto(double impacto);
+
+    public abstract void calcularImpacto();
 }

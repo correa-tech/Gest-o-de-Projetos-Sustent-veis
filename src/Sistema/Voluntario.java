@@ -1,5 +1,7 @@
 package Sistema;
 
+import Projetos.ProjetoSustentavel;
+
 public class Voluntario {
     private String nome;
     private String email;

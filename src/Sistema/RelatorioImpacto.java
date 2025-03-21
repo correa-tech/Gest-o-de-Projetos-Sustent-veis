@@ -1,25 +1,20 @@
 package Sistema;
 
-
-
-public class RelatorioImpacto implements ImpactoAmbiental{
-    private int arvoresPlantadas;
+public class RelatorioImpacto {
+    private double impacto;
     public int carbonoPorArvore = 20;
-    private double reducaoCO2;
 
-    public RelatorioImpacto(int arvoresPlantadas) {
-        this.arvoresPlantadas = arvoresPlantadas;
+    public RelatorioImpacto(double impacto) {
+        this.impacto = impacto;
+    }
+
+    public double getImpacto() {
+        return impacto;
     }
 
     public void exibirRelatorio() {
-        System.out.println("----------Relatório de Impacto-----------");
-        System.out.println("Árvores Plantadas: " + arvoresPlantadas);
-        System.out.println("Impacto: " + calcularImpacto() + " toneladas de redução de C02");
+        System.out.println("---------- Relatório de Impacto -----------");
+        System.out.println("Impacto: " + impacto + " unidades.");
 
-    }
-
-    @Override
-    public double calcularImpacto() {
-        return reducaoCO2 = arvoresPlantadas * carbonoPorArvore;
     }
 }
